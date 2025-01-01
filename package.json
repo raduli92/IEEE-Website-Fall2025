@@ -1,5 +1,5 @@
 {
-  "homepage": "http://rowanieee.org",
+  "homepage": "https://EvidentlyKevin.github.io/IEEE-Website-Spring2025",
   "name": "ieee-website-spring2025",
   "private": true,
   "version": "0.0.0",
@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "18": "^0.0.0",
     "@emailjs/browser": "^4.4.1",
     "framer-motion": "^11.4.0",
     "react": "^18.3.1",
@@ -33,7 +34,7 @@
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
-    "gh-pages": "^6.1.1",
+    "gh-pages": "^6.2.0",
     "globals": "^15.9.0",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.10",
