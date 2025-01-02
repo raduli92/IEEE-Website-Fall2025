@@ -1,42 +1,40 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Events from "./components/Events";
 import Profhacks from "./components/Profhacks";
 import Eboard from "./components/Eboard";
-import Photos from "./components/Photos";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
-import ConnectionsGame from "./components/ConnectionsGame";
+import Photos from "./components/Photos";
+import React, { useState } from "react";
+import useKeySequence from "./hooks/useKeySequence";
+import CLIAdventure from "./components/CLIAdventure";
 
 const App = () => {
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        {/* Home Page */}
-        <Route
-          path="/"
-          element={
-            <main className="overflow-y-hidden text-neutral-200 antialiased">
-              <Hero />
-              <About />
-              <Events />
-              <Profhacks />
-              <Eboard />
-              <Photos />
-              <ContactForm />
-              <Footer />
-            </main>
-          }
-        />
+  const [showCLI, setShowCLI] = useState(false);
 
-        {/* Connections Game Page */}
-        <Route path="/connections-game" element={<ConnectionsGame />} />
-      </Routes>
-    </Router>
+  // Trigger the CLI with the 'i', 'e', 'e', 'e' sequence
+  useKeySequence(["i", "e", "e", "e"], () => setShowCLI(true));
+
+  return (
+    <div>
+      {/* Render the CLI Adventure game if the key sequence is triggered */}
+      {showCLI && <CLIAdventure closeCLI={() => setShowCLI(false)} />}
+      
+      {/* Main website content */}
+      <main className="overflow-y-hidden text-neutral-200 antialiased">
+        <Hero />
+        <Navbar />
+        <About />
+        <Events />
+        <Profhacks />
+        <Eboard />
+        <Photos />
+        <ContactForm />
+        <Footer />
+      </main>
+    </div>
   );
 };
 
