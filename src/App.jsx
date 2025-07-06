@@ -7,7 +7,7 @@ import Eboard from "./components/Eboard";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import Photos from "./components/Photos";
-import React, { useState } from "react";
+import { useState } from "react";
 import useKeySequence from "./hooks/useKeySequence";
 import CLIAdventure from "./components/CLIAdventure";
 
