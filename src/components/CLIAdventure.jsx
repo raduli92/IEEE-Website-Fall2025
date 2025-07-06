@@ -111,7 +111,7 @@ const CLIAdventure = ({ closeCLI }) => {
 
       default:
         response = [
-          "The story ends here. Sign up for ProfHacks 2025. Maybe fate will brighten her smile upon you then.",
+          "The story ends here... for now",
         ];
         break;
     }
